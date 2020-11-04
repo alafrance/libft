@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexis <alexis@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 19:03:46 by alexis            #+#    #+#             */
-/*   Updated: 2020/11/03 19:03:48 by alexis           ###   ########lyon.fr   */
+/*   Updated: 2020/11/04 15:09:28 by sylvainlafr      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int k;
+	size_t i;
+	size_t j;
+	size_t k;
 
 	i = 0;
 	j = 0;

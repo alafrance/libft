@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 18:37:27 by alexis            #+#    #+#             */
-/*   Updated: 2020/11/04 14:16:54 by sylvainlafr      ###   ########lyon.fr   */
+/*   Created: 2020/11/04 17:35:48 by sylvainlafr       #+#    #+#             */
+/*   Updated: 2020/11/04 18:12:24 by sylvainlafr      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-    char *c;
-
-    c = s;
     size_t i;
+    unsigned char *s;
+    unsigned char *d;
 
+    s = (unsigned char*)src;
+    d = (unsigned char*)dst;
     i = 0;
-    while (i < n)
+    while (i != n)
     {
-        c[i] = 0;
+        d[i] = s[i];
         i++;
     }
+    return (0);
+
 }

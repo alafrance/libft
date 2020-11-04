@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexis <alexis@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 21:57:39 by alexis            #+#    #+#             */
-/*   Updated: 2020/11/03 22:25:53 by alexis           ###   ########lyon.fr   */
+/*   Updated: 2020/11/04 11:11:42 by sylvainlafr      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int ft_isprint(int c)
 {
-    return (c >= 32 && c < 127) ? 1 : 0;
+    if (c >= 32 && c < 127)
+        return (1);
+    else
+        return (0);
 }
