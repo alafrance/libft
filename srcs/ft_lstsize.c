@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 12:51:05 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2020/11/04 12:53:43 by sylvainlafr      ###   ########lyon.fr   */
+/*   Created: 2020/11/06 12:45:08 by sylvainlafr       #+#    #+#             */
+/*   Updated: 2020/11/06 12:45:09 by sylvainlafr      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+int ft_lstsize(t_list *lst)
 {
-    int i;
-    int r;
+    int count;
 
-    r = -1;
-    i = 0;
-    while (s[i])
+    count = 0;
+    while (lst)
     {
-        if (s[i] == c)
-            r = i;
-        i++;
+        count++;
+        lst = lst->next;
     }
-    if (s[i] == c)
-        return ((char*)s + i);
-    if (r != -1)
-        return ((char*)s + r);
-    else
-        return (NULL);
+    return (count);
 }

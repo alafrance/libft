@@ -12,30 +12,11 @@
 
 #include "libft.h"
 
-char    *ft_strrev(char *str)
-{
-    int i;
-    int size;
-    char tmp;
-
-
-    size = ft_strlen(str);
-    i = 0;
-    while(i < size / 2)
-    {
-        tmp = str[i];
-        str[i] = str[size - 1 - i];
-        str[size - 1 - i] = tmp;
-        i++;
-    }
-    return (str);
-}
-
-int size_n(int nb)
+static int size_n(int nb)
 {
     int count;
 
-    count = 0;
+    count = 1;
     while (nb >= 10)
     {
         count++;
@@ -50,21 +31,20 @@ char    *ft_itoa(int n)
     int sign;
     char *buf;
     int i;
-
     i = 0;
     nb = n;
     sign = 1;
     if (nb < 0)
     {
+        nb = -nb;
         if (!(buf = malloc(sizeof(char) * (size_n(nb) + 2))))
             return (NULL);
         sign = -1;
-        nb = -nb;
     }
     else
         if (!(buf = malloc(sizeof(char) * (size_n(nb) + 1))))
             return (NULL);
-    while(nb >= 10)
+    while (nb >= 10)
     {
         buf[i++] = nb % 10 + '0';
         nb /= 10;

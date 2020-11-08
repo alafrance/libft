@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char *malloc_a_case(const char *str, char c)
+static char *malloc_a_case(const char *str, char c)
 {
     int i;
     char *buf;
@@ -32,7 +32,7 @@ char *malloc_a_case(const char *str, char c)
     return (buf);
 }
 
-int malloc_all(const char *s, char c)
+static int malloc_all(const char *s, char c)
 {
     int count;
 
@@ -57,6 +57,8 @@ char **ft_split(char const *s, char c)
     int i;
 
     i = 0;
+    if (s == NULL)
+        return (NULL);
     if (!(strs = malloc(sizeof(char*) * (malloc_all(s, c) + 1))))
         return (NULL);
     while(*s)

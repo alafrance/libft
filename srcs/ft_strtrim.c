@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-int is_a_set(char c, char const *set)
+static int is_a_set(char c, char const *set)
 {
     int i;
 
     i = 0;
-    while(set[i])
+    while (set[i])
     {
         if (set[i] == c)
             return (1);
@@ -26,38 +26,35 @@ int is_a_set(char c, char const *set)
     return (0);
 }
 
-int count_size_buf_trim(char const *s1, char const *set)
-{
-    int i;
-    int count;
-
-    count = 0;
-    i = 0;
-    while (s1[i])
-    {
-        if (!is_a_set(s1[i], set))
-            count++;
-        i++;
-    }
-    return (count);
-}
-
 char *ft_strtrim(char const *s1, char const *set)
 {
     int i;
     int j;
+    int k;
     char *buf;
 
-    i = 0;
-    j = 0;
-    if (!(buf = malloc(sizeof(char) * (count_size_buf_trim(s1, set) + 1))))
+    if (s1 == NULL)
         return (NULL);
-    while (s1[i])
-    {
-        if (!is_a_set(s1[i], set))
-            buf[j++] = s1[i];
+    i = 0;
+    j = ft_strlen(s1) - 1;
+    k = 0;
+    while (is_a_set(s1[i], set) && s1[i])
         i++;
+    while (is_a_set(s1[j], set) && j != 0)
+        j--;
+    if (i >= j)
+    {
+        if (!(buf = malloc(sizeof(char) * (1))))
+            return (NULL);
+        buf[0] = 0;
+        return (buf);
     }
-    buf[j] = '\0';
+    if (!(buf = malloc(sizeof(char) * (j - i + 2))))
+        return (NULL);
+    while (i <= j)
+    {
+        buf[k++] = s1[i++];
+    }
+    buf[k] = '\0';
     return (buf);
 }

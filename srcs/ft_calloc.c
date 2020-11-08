@@ -14,18 +14,12 @@
 
 void    *ft_calloc(size_t count, size_t size)
 {
-    void *mem;
-    char *c;
-    size_t i;
+    void    *mem;
 
-    i = 0;
-    if(!(mem = malloc(size * count)))
+    if (count < 0 || size < 0)
         return (NULL);
-    c = mem;
-    while (i != count)
-    {
-        c[i] = 0;
-        i++;
-    }
+    if (!(mem = malloc(size * count)))
+        return (NULL);
+    ft_bzero(mem, count * size);
     return (mem);
 }

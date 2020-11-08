@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 12:51:05 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2020/11/04 12:53:43 by sylvainlafr      ###   ########lyon.fr   */
+/*   Created: 2020/11/06 12:44:36 by sylvainlafr       #+#    #+#             */
+/*   Updated: 2020/11/06 12:45:21 by sylvainlafr      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char    *ft_strrev(char *str)
 {
     int i;
-    int r;
+    int size;
+    char tmp;
 
-    r = -1;
+
+    size = ft_strlen(str);
     i = 0;
-    while (s[i])
+    while(i < size / 2)
     {
-        if (s[i] == c)
-            r = i;
+        tmp = str[i];
+        str[i] = str[size - 1 - i];
+        str[size - 1 - i] = tmp;
         i++;
     }
-    if (s[i] == c)
-        return ((char*)s + i);
-    if (r != -1)
-        return ((char*)s + r);
-    else
-        return (NULL);
+    return (str);
 }
