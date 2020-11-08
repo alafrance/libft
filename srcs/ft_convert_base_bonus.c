@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_convert_base_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/08 17:14:43 by sylvainlafr       #+#    #+#             */
+/*   Updated: 2020/11/08 17:14:55 by sylvainlafr      ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char	*convert_base_10_to_some_base(int nb, char *base_to, char *str)
