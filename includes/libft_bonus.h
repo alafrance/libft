@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_bonus.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/15 15:20:42 by alafranc          #+#    #+#             */
+/*   Updated: 2020/11/15 15:21:33 by alafranc         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_BONUS_H
-#define LIBFT_BONUS_H
-char    *ft_strrev(char *str);
+# define LIBFT_BONUS_H
+
+char	*ft_strrev(char *str);
 int		ft_atoi_base(char *str, char *base);
 void	ft_putnbr_base(int nbr, char *base);
 int		ft_strlen_base(int nb, int base_to);

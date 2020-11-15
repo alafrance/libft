@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
+/*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 19:03:46 by alexis            #+#    #+#             */
-/*   Updated: 2020/11/04 15:09:28 by sylvainlafr      ###   ########lyon.fr   */
+/*   Created: 2020/11/15 15:18:49 by alafranc          #+#    #+#             */
+/*   Updated: 2020/11/15 15:18:50 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

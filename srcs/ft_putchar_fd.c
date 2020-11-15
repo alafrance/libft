@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
+/*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 12:08:14 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2020/11/04 12:08:59 by sylvainlafr      ###   ########lyon.fr   */
+/*   Created: 2020/11/15 15:18:07 by alafranc          #+#    #+#             */
+/*   Updated: 2020/11/15 15:18:07 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }

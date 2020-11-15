@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
+/*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 12:33:11 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2020/11/04 15:09:35 by sylvainlafr      ###   ########lyon.fr   */
+/*   Created: 2020/11/15 15:18:53 by alafranc          #+#    #+#             */
+/*   Updated: 2020/11/15 15:18:53 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 
 	i = 0;
 	if (src == NULL || dest == NULL)
-	    return (0);
+		return (0);
 	if (dstsize == 0)
 		return (ft_strlen(src));
 	while (src[i] && i < dstsize - 1)

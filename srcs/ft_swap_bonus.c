@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sylvainlafrance <sylvainlafrance@studen    +#+  +:+       +#+        */
+/*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 17:15:37 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2020/11/08 17:15:39 by sylvainlafr      ###   ########lyon.fr   */
+/*   Updated: 2020/11/15 15:19:40 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	ft_swap_int(int *a, int *b)
 {
-    int swap;
+	int swap;
 
-    swap = *a;
-    *a = *b;
-    *b = swap;
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
 
 void	ft_swap_char(char **ptr1, char **ptr2)
 {
-    char *tmp;
+	char *tmp;
 
-    tmp = *ptr1;
-    *ptr1 = *ptr2;
-    *ptr2 = tmp;
+	tmp = *ptr1;
+	*ptr1 = *ptr2;
+	*ptr2 = tmp;
 }
