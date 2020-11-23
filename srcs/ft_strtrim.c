@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 15:02:05 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2020/11/15 15:19:38 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 15:23:23 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static int	is_a_set(char c, char const *set)
 
 static char	*ft_error_ft_strtrim(void)
 {
+	char *buf;
+
 	if (!(buf = malloc(sizeof(char) * (1))))
 		return (NULL);
 	buf[0] = 0;
