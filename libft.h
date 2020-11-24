@@ -14,7 +14,6 @@
 # define FT_LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include "libft_bonus.h"
 
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
