@@ -6,7 +6,7 @@
 #    By: alafranc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 15:02:38 by alafranc          #+#    #+#              #
-#    Updated: 2020/11/23 15:02:40 by alafranc         ###   ########lyon.fr    #
+#    Updated: 2020/11/25 12:21:25 by alafranc         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ FLAGS		= -Wall -Wextra -Werror
 
 RM			= rm -f
 
-AR			= ar rc
+AR			= ar rcs
 
 all: 	${NAME}	
 
@@ -40,11 +40,9 @@ all: 	${NAME}
 
 $(NAME):	${OBJS}
 			${AR} ${NAME} ${OBJS}
-			ranlib ${NAME}
 
-bonus: 		${OBJS_BONUS}
+bonus: 		${NAME} ${OBJS_BONUS}
 			${AR} ${NAME} ${OBJS_BONUS}
-			ranlib ${NAME}
 clean:
 			${RM} ${OBJS} ${OBJS_BONUS}
 
