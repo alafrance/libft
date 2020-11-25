@@ -12,7 +12,17 @@
 
 #include "libft.h"
 
-static char	*malloc_a_case(const char *str, char c)
+static void	free_all(char **strs, int j)
+{
+	int i;
+
+	i = 0;
+	while (i != j)
+		free(strs[i++]);
+	free(strs);
+}
+
+static char	*malloc_a_case(const char *str, char c, char **strs, int index)
 {
 	int		i;
 	char	*buf;
@@ -21,7 +31,10 @@ static char	*malloc_a_case(const char *str, char c)
 	while (str[i] != c && str[i])
 		i++;
 	if (!(buf = malloc(sizeof(char) * (i + 1))))
+	{
+		free_all(strs, index);
 		return (NULL);
+	}
 	i = 0;
 	while (str[i] != c && str[i])
 	{
@@ -57,7 +70,7 @@ char		**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	if (!(strs = malloc(sizeof(char*) * (malloc_all(s, c) + 1))))
 		return (NULL);
@@ -67,10 +80,11 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s != c && *s)
 		{
-			if (!(strs[i++] = malloc_a_case(s, c)))
+			if (!(strs[i] = malloc_a_case(s, c, strs, i)))
 				return (NULL);
 			while (*s != c && *s)
 				s++;
+			i++;
 		}
 	}
 	strs[i] = NULL;
