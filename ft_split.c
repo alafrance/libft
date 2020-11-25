@@ -67,7 +67,8 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s != c && *s)
 		{
-			strs[i++] = malloc_a_case(s, c);
+			if (!(strs[i++] = malloc_a_case(s, c)))
+				return (NULL);
 			while (*s != c && *s)
 				s++;
 		}
