@@ -14,12 +14,10 @@
 
 int	ft_atoi(const char *str)
 {
-	int nb;
-	int sign;
-	int i;
-	int j;
+	long	nb;
+	int		sign;
+	int		i;
 
-	j = 0;
 	i = 0;
 	nb = 0;
 	sign = 1;
@@ -32,11 +30,13 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = nb * 10 + str[i] - '0';
-		i++;
-		j++;
+		nb = nb * 10 + str[i++] - '0';
+		if (nb < 0)
+		{
+			if (sign == 1)
+				return (-1);
+			return (0);
+		}
 	}
-	if (j > 20)
-		return (sign > 0) ? -1 : 0;
-	return (nb * sign);
+	return ((int)(nb * sign));
 }
