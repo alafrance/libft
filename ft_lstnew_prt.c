@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_prt.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 12:51:05 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2021/03/24 14:25:30 by alafranc         ###   ########lyon.fr   */
+/*   Created: 2021/03/24 13:24:33 by alafranc          #+#    #+#             */
+/*   Updated: 2021/03/24 14:46:03 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_lstnew_prt(t_list **s, size_t count, size_t size)
 {
-	int	i;
-	int	r;
-
-	r = -1;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			r = i;
-		i++;
-	}
-	if (s[i] == c)
-		return ((char *)s + i);
-	if (r != -1)
-		return ((char *)s + r);
-	else
-		return (NULL);
+	if (count < 0 || size < 0)
+		return (0);
+	*s = malloc(count * size);
+	if (!s)
+		return (0);
+	return (1);
 }

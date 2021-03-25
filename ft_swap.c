@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:01:24 by alafranc          #+#    #+#             */
-/*   Updated: 2020/12/10 10:05:13 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 14:25:35 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap_int(int *a, int *b)
 {
-	int swap;
+	int	swap;
 
 	swap = *a;
 	*a = *b;
@@ -23,7 +23,7 @@ void	ft_swap_int(int *a, int *b)
 
 void	ft_swap_char(char **ptr1, char **ptr2)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = *ptr1;
 	*ptr1 = *ptr2;

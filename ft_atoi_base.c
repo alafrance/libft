@@ -6,17 +6,17 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 09:59:22 by alafranc          #+#    #+#             */
-/*   Updated: 2020/12/10 10:10:49 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 15:30:41 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi_base(char *str, char *base)
+int	ft_atoi_base(char *str, char *base)
 {
-	int i;
-	int atoi;
-	int sign;
+	int	i;
+	int	atoi;
+	int	sign;
 
 	atoi = 0;
 	sign = 1;

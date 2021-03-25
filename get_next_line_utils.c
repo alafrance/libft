@@ -6,43 +6,11 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 00:03:45 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:46:49 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 15:57:50 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t i;
-
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dest;
-	int		i;
-
-	i = 0;
-	while (src[i])
-		i++;
-	if (!(dest = malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
 
 char	*ft_strjoin_free(char *s1, char *s2)
 {
@@ -56,7 +24,7 @@ char	*ft_strjoin_free(char *s1, char *s2)
 		return (ft_strdup(s2));
 	if (s2 == NULL)
 		return (ft_strdup(s1));
-	if (!(buf = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+	if (!(ft_nalloc(&buf, sizeof(char), ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (NULL);
 	while (s1[j])
 		buf[i++] = s1[j++];
@@ -68,9 +36,9 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	return (buf);
 }
 
-int		ft_strchr_gnl(char *file, int c)
+int	ft_strchr_gnl(char *file, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (file == NULL)
@@ -101,7 +69,7 @@ char	*ft_substr_line(char *s)
 		return (ft_strdup(""));
 	while (i < end && s[i])
 		i++;
-	if (!(buf = malloc(sizeof(char) * (i + 1))))
+	if (!(ft_nalloc(&buf, sizeof(char), i + 1)))
 		return (NULL);
 	i = 0;
 	while (s[i] && i < end)

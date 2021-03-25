@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:20:14 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:29:01 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:15:15 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_init_size(char *ptr, t_flags flags)
 {
-	int size;
+	int	size;
 
 	if (!ptr && flags.nb_precision < 0)
 		size = ft_strlen("(null)");
 	else if (ptr && (flags.nb_precision < 0
-				|| flags.nb_precision > (int)ft_strlen(ptr)))
+			|| flags.nb_precision > (int)ft_strlen(ptr)))
 		size = ft_strlen(ptr);
 	else
 		size = flags.nb_precision;

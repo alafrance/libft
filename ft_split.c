@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:18:32 by alafranc          #+#    #+#             */
-/*   Updated: 2020/11/15 15:18:33 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 15:59:38 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	free_all(char **strs, int j)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i != j)
@@ -30,7 +30,7 @@ static char	*malloc_a_case(const char *str, char c, char **strs, int index)
 	i = 0;
 	while (str[i] != c && str[i])
 		i++;
-	if (!(buf = malloc(sizeof(char) * (i + 1))))
+	if (!(ft_nalloc(&buf, i + 1, sizeof(char))))
 	{
 		free_all(strs, index);
 		return (NULL);
@@ -47,7 +47,7 @@ static char	*malloc_a_case(const char *str, char c, char **strs, int index)
 
 static int	malloc_all(const char *s, char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*s)
@@ -64,15 +64,14 @@ static int	malloc_all(const char *s, char c)
 	return (count);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	if (!(strs = malloc(sizeof(char*) * (malloc_all(s, c) + 1))))
+	strs = malloc(sizeof(char *) * (malloc_all(s, c) + 1));
+	if (!s || !strs)
 		return (NULL);
 	while (*s)
 	{
@@ -80,7 +79,8 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s != c && *s)
 		{
-			if (!(strs[i] = malloc_a_case(s, c, strs, i)))
+			strs[i] = malloc_a_case(s, c, strs, i);
+			if (!(strs[i]))
 				return (NULL);
 			while (*s != c && *s)
 				s++;

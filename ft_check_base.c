@@ -6,15 +6,15 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:00:19 by alafranc          #+#    #+#             */
-/*   Updated: 2020/12/10 10:11:22 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 15:31:29 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen_base(int nb, int base_to)
+int	ft_strlen_base(int nb, int base_to)
 {
-	int count;
+	int	count;
 
 	if (nb < 0)
 		count = 2;
@@ -28,7 +28,7 @@ int		ft_strlen_base(int nb, int base_to)
 	return (count + 1);
 }
 
-int		is_base_valid(char *str)
+int	is_base_valid(char *str)
 {
 	int		i;
 	int		j;
@@ -53,9 +53,9 @@ int		is_base_valid(char *str)
 	return (1);
 }
 
-int		is_in_base(char c, char *base)
+int	is_in_base(char c, char *base)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (base[i])

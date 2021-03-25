@@ -6,20 +6,22 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:23:42 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/11 10:10:01 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 14:46:17 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1
-#endif
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
 
-
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
@@ -49,18 +51,16 @@ size_t				ft_strlen(const char *s);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, unsigned int n);
 int					ft_strcmp(const char *s1, const char *s2);
-char				*ft_strnstr(const char *str
-					, const char *to_find, size_t len);
+char				*ft_strnstr(const char *str \
+						, const char *to_find, size_t len);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-typedef struct		s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+int					ft_nalloc(char **s, size_t count, size_t size);
+int					ft_nalloc_void(void **s, size_t count, size_t size);
+int					ft_nalloc_list(t_list **s, size_t count, size_t size);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
@@ -69,7 +69,7 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *)
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *)\
 					, void (*del)(void *));
 int					ft_atoi_base(char *str, char *base);
 char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
@@ -97,38 +97,41 @@ char				*ft_strdup(char *src);
 char				*ft_strjoin_free(char *s1, char *s2);
 int					ft_strchr_gnl(char *file, int c);
 char				*ft_substr_line(char *s);
-typedef struct		s_flags {
+typedef struct s_flags {
 	int				display_zero;
 	int				space_reverse;
 	int				lmc;
 	int				nb_precision;
 }					t_flags;
 int					ft_printf(const char *format, ...)
-					 __attribute__((format(printf,1,2)));
+					 __attribute__((format(printf, 1, 2)));
 int					ft_print_address(va_list ap, t_flags flags);
-int                             ft_print_char(va_list ap, t_flags flags);
-int                             ft_print_decimal(va_list ap, t_flags flags);
-int                             ft_print_string(va_list ap, t_flags flags);
-int                             ft_print_rate(t_flags flags);
-int                             ft_print_unsigned(va_list ap, t_flags flags
+int					ft_print_char(va_list ap, t_flags flags);
+int					ft_print_decimal(va_list ap, t_flags flags);
+int					ft_print_string(va_list ap, t_flags flags);
+int					ft_print_rate(t_flags flags);
+int					ft_print_unsigned(va_list ap, t_flags flags \
 								, int (f)(unsigned long long), int base);
-int                             ft_print_arg(const char *format, va_list ap, t_flags flags);
-int                             ft_putchar_1(char c);
-int                             ft_putnbr_hexa_count(unsigned long long nb);
-int                             ft_putstr_count(char *str, int size);
-int                             ft_putnbr_count(unsigned long long nb);
-const char              		*parse_flags_lmc(const char *format, t_flags *flags
+int					ft_print_arg(const char *format, va_list ap, t_flags flags);
+int					ft_putchar_1(char c);
+int					ft_putnbr_hexa_count(unsigned long long nb);
+int					ft_putstr_count(char *str, int size);
+int					ft_putnbr_count(unsigned long long nb);
+const char			*parse_flags_lmc(const char *format, t_flags *flags \
 								, va_list ap);
-const char              		*parse_flags_precision(const char *format,
+const char			*parse_flags_precision(const char *format, \
 								t_flags *flags, va_list ap);
-const char              		*parse(const char *format, t_flags *flags, va_list ap);
-int                             ft_display_space(int nb_space);
-int                             ft_display_zero(int nb_zero);
-int                             ft_display_space_unsigned(int nb, int size_nb, t_flags flags);
-int                             ft_display_zero_unsigned(int size_nb, t_flags flags);
-int                             ft_display_nb_unsigned(long nb, int size_nb, t_flags flags
+const char			*parse(const char *format, t_flags *flags, va_list ap);
+int					ft_display_space(int nb_space);
+int					ft_display_zero(int nb_zero);
+int					ft_display_space_unsigned(int nb, int size_nb, \
+									t_flags flags);
+int					ft_display_zero_unsigned(int size_nb, t_flags flags);
+int					ft_display_nb_unsigned(long nb, int size_nb, t_flags flags \
 								, int (f)(unsigned long long));
-int                             ft_putchar_hexa_maj_1(char c);
-int                             ft_putnbr_hexa_maj_count(unsigned long long nb);
-int                             ft_zero_exception(t_flags flags);
+int					ft_putchar_hexa_maj_1(char c);
+int					ft_putnbr_hexa_maj_count(unsigned long long nb);
+int					ft_zero_exception(t_flags flags);
+int					ft_lstnew_prt(t_list **s, size_t count, size_t size);
+
 #endif

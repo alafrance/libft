@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 15:57:16 by sylvainlafr       #+#    #+#             */
-/*   Updated: 2020/11/15 15:19:36 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 14:23:54 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	j = 0;
 	i = 0;
 	if (to_find[j] == '\0')
-		return ((char*)str);
+		return ((char *)str);
 	while (str[i] && i < len)
 	{
 		while (str[i + j] && to_find[j]
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 		{
 			j++;
 			if (to_find[j] == '\0')
-				return ((char*)str + i);
+				return ((char *)str + i);
 		}
 		j = 0;
 		i++;

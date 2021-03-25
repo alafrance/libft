@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:16:54 by alafranc          #+#    #+#             */
-/*   Updated: 2020/12/10 10:16:11 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 16:00:47 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	size_n(int nb)
 {
-	int count;
+	int	count;
 
 	count = 1;
 	while (nb >= 10)
@@ -32,19 +32,19 @@ static int	ft_initialize_itoa(long *nb, int *sign, char **buf, int n)
 	if (*nb < 0)
 	{
 		*nb = -(*nb);
-		if (!(*buf = malloc(sizeof(char) * (size_n(*nb) + 2))))
+		if (!(ft_nalloc(buf, sizeof(char), size_n(*nb) + 2)))
 			return (0);
 		*sign = -1;
 	}
 	else
 	{
-		if (!(*buf = malloc(sizeof(char) * (size_n(*nb) + 1))))
+		if (!(ft_nalloc(buf, sizeof(char), size_n(*nb) + 1)))
 			return (0);
 	}
 	return (1);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long	nb;
 	int		sign;

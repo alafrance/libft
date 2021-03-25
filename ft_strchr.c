@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:18:36 by alafranc          #+#    #+#             */
-/*   Updated: 2020/11/15 15:18:36 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 14:13:21 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != c && s[i])
 		i++;
 	if (s[i] == c)
-		return ((char*)s + i);
+		return ((char *)s + i);
 	else
 		return (NULL);
 }

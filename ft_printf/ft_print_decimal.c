@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:24:28 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:29:03 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:15:34 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_display_space_decimal(int neg, int nb, int size_nb, t_flags flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (neg)
@@ -32,7 +32,7 @@ int	ft_display_space_decimal(int neg, int nb, int size_nb, t_flags flags)
 
 int	ft_zero_exception(t_flags flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (flags.lmc > 0)
@@ -42,7 +42,7 @@ int	ft_zero_exception(t_flags flags)
 
 int	ft_display_zero_decimal(int neg, int size_nb, t_flags flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (flags.nb_precision > size_nb)
@@ -59,7 +59,7 @@ int	ft_display_zero_decimal(int neg, int size_nb, t_flags flags)
 
 int	ft_display_nb_decimal(long nb, int neg, int size_nb, t_flags flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (neg)

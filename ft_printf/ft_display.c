@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:47:29 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:28:57 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:13:44 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_display_space(int nb_space)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < nb_space)
@@ -24,7 +24,7 @@ int	ft_display_space(int nb_space)
 
 int	ft_display_zero(int nb_zero)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < nb_zero)
@@ -43,7 +43,7 @@ int	ft_putnbr_count(unsigned long long nb)
 	if (nb < 10)
 		return (ft_putchar_1(nb + '0'));
 	return (ft_putnbr_count(nb / 10)
-	+ ft_putchar_1(nb % 10 + '0'));
+		+ ft_putchar_1(nb % 10 + '0'));
 }
 
 int	ft_putstr_count(char *str, int size)

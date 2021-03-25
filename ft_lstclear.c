@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:17:07 by alafranc          #+#    #+#             */
-/*   Updated: 2020/11/15 15:17:07 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 15:44:27 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *next;
+	t_list	*next;
 
 	if (*lst == NULL)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:17:41 by alafranc          #+#    #+#             */
-/*   Updated: 2020/11/15 15:17:42 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 13:34:19 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	*source;
 	unsigned char	*dest;
 
-	source = (unsigned char*)src;
-	dest = (unsigned char*)dst;
+	source = (unsigned char *)src;
+	dest = (unsigned char *)dst;
 	i = 0;
 	if (dst == src)
 		return (NULL);

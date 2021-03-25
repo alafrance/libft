@@ -6,13 +6,13 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 13:28:19 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:29:10 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:16:15 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int			ft_print_arg(const char *format, va_list ap, t_flags flags)
+int	ft_print_arg(const char *format, va_list ap, t_flags flags)
 {
 	if (*format == 's')
 		return (ft_print_string(ap, flags));
@@ -33,7 +33,7 @@ int			ft_print_arg(const char *format, va_list ap, t_flags flags)
 	return (0);
 }
 
-void		ft_init_flags(t_flags *flags)
+void	ft_init_flags(t_flags *flags)
 {
 	flags->display_zero = 0;
 	flags->space_reverse = 0;
@@ -41,10 +41,10 @@ void		ft_init_flags(t_flags *flags)
 	flags->nb_precision = -1;
 }
 
-int			ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list ap;
-	t_flags flags;
+	va_list	ap;
+	t_flags	flags;
 	int		count;
 
 	count = 0;

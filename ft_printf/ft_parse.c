@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 19:28:45 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:28:54 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:14:45 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ const char	*parse_flags_lmc(const char *format, t_flags *flags, va_list ap)
 		format++;
 	}
 	else
+	{
 		while (*format >= '0' && *format <= '9')
 		{
 			flags->lmc = flags->lmc * 10 + *format - '0';
 			format++;
-		}
+		}		
+	}
 	return (format);
 }
 

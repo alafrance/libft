@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:18:14 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:29:08 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:15:52 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_display_space_unsigned(int nb, int size_nb, t_flags flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (flags.lmc > size_nb)
@@ -30,7 +30,7 @@ int	ft_display_space_unsigned(int nb, int size_nb, t_flags flags)
 
 int	ft_display_zero_unsigned(int size_nb, t_flags flags)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (flags.nb_precision > size_nb)

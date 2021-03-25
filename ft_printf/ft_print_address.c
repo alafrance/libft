@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 17:19:53 by alafranc          #+#    #+#             */
-/*   Updated: 2021/01/08 14:28:59 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/25 12:15:01 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	size_nb_base(unsigned long long nb, int base)
 {
-	int count;
+	int	count;
 
 	count = 1;
 	while (nb >= (unsigned long long)base)
@@ -32,7 +32,7 @@ int	ft_print_address(va_list ap, t_flags flags)
 	int					size_nb;
 	char				*str;
 
-	str = va_arg(ap, char*);
+	str = va_arg(ap, char *);
 	count = 0;
 	addr = (unsigned long long)str;
 	if (str == NULL && flags.nb_precision == 0)

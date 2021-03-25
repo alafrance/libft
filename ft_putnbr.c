@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:18:22 by alafranc          #+#    #+#             */
-/*   Updated: 2020/12/10 16:08:41 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 13:34:52 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int n)
 {
-	long nb;
+	long	nb;
 
 	nb = n;
 	if (nb < 0)

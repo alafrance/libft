@@ -6,7 +6,7 @@
 /*   By: alafranc <alafranc@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:18:39 by alafranc          #+#    #+#             */
-/*   Updated: 2020/11/15 15:18:40 by alafranc         ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 14:38:40 by alafranc         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(char *src)
 	i = 0;
 	while (src[i])
 		i++;
-	if (!(dest = malloc(sizeof(char) * (i + 1))))
+	if (!(ft_nalloc(&dest, i + 1, sizeof(char))))
 		return (NULL);
 	i = 0;
 	while (src[i])
